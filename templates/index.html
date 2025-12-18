@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Electronics Converter</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-area">
+                <i class="fas fa-microchip logo-icon"></i>
+                <h1>DigiConvert <span class="badge">(Decimal to Binary to Gray Code Converter)</span></h1>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main>
+            <!-- Input Card -->
+            <div class="card input-card">
+                <h2><i class="fas fa-exchange-alt"></i> Conversion Setup</h2>
+                
+                <div class="form-group">
+                    <label for="conversion-type">Select Conversion Type</label>
+                    <div class="custom-select-wrapper">
+                        <select id="conversion-type">
+                            <option value="bin2dec">Binary → Decimal</option>
+                            <option value="dec2bin">Decimal → Binary</option>
+                            <option value="bin2gray">Binary → Gray Code</option>
+                            <option value="gray2bin">Gray Code → Binary</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="input-value">Enter Value</label>
+                    <input type="text" id="input-value" placeholder="e.g., 1010" autocomplete="off">
+                    <span id="input-error" class="error-msg"></span>
+                </div>
+
+                <button id="convert-btn" class="primary-btn">
+                    Convert Now <i class="fas fa-bolt"></i>
+                </button>
+            </div>
+
+            <!-- Result Card -->
+            <div class="card result-card hidden" id="result-card">
+                <h2><i class="fas fa-poll-h"></i> Result</h2>
+                
+                <div class="result-display">
+                    <span class="label">Output:</span>
+                    <h1 id="output-value">--</h1>
+                    <button class="copy-btn" id="copy-btn" title="Copy to Clipboard">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="steps-container">
+                    <button class="collapse-btn" id="toggle-steps">
+                        View Step-by-Step Explanation <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="steps-content collapsed" id="steps-content">
+                        <!-- Dynamic Steps injected here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
